@@ -14,10 +14,10 @@ app.controller('DescriptionLocationItemController', ['angularLoad', function(ang
 
       vm.collItem = '';
       if ('callNumber' in vm.parentCtrl.loc.location) {
-          var collocItem = vm.parentCtrl.loc.location.callNumber;
-        if (collocItem.match(/ZAR/)) {
-          vm.collItem = 'In deposito esterno, richiesta prenotazione.';
-        }
+            var colloc= vm.parentCtrl.loc.location.callNumber
+            if (colloc.match(/^DP\.ST\./)){
+                vm.collItem = 'In deposito esterno, richiesta prenotazione.';
+            }
       }
     }
   };
